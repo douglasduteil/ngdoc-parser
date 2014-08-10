@@ -1,6 +1,6 @@
 {
   "name": "ngdoc-parser",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "A ngDoc parser",
   "main": "index.js",
   "directories": {
@@ -20,12 +20,14 @@
   },
   "homepage": "https://github.com/douglasduteil/ngDocParser",
   "dependencies": {
-    "catharsis": "^0.8.2",
-    "esprima": "^1.2.2",
+    "catharsis": "^0",
+    "esprima": "^1",
     "lodash": "^2.4.1",
-    "through2": "^0.5.1"
+    "through2": "^0"
   },
   "devDependencies": {
-    "gulp": "^3.8.6"
+    "bluebird": "^2.2.2",
+    "gulp": "^3",
+    "nunjucks": "^1"
   }
 }
