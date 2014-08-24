@@ -8,5 +8,5 @@ A ngDoc parser
 
 ### TEST
 
-gulp --gulpfile demo/gulpFile.js
+node demo/parseSrc.js
 

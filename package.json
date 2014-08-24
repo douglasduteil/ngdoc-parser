@@ -26,8 +26,9 @@
     "through2": "^0"
   },
   "devDependencies": {
-    "bluebird": "^2.2.2",
-    "gulp": "^3",
-    "nunjucks": "^1"
+    "lodash": "^2.4.1",
+    "marked": "^0.3.2",
+    "nunjucks": "^1",
+    "vinyl-fs": "^0.3.6"
   }
 }
