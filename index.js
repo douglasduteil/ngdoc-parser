@@ -30,7 +30,7 @@ module.exports = function ngDocParser(opts) {
       comment: true
     });
 
-    chunk.jsdoc = _(parsingResult.comments)
+    var jsdoc = _(parsingResult.comments)
       .filter(function (comment) {
         comment.uncommentedValue = comment.value.replace(LEADING_STAR, '').trim();
 
@@ -47,13 +47,13 @@ module.exports = function ngDocParser(opts) {
       })
 
       .map(function (comment) {
-
         var parser = new DocCommentParser(comment.uncommentedValue);
         parser.run();
-
         return parser.data;
       })
       .value();
+
+    chunk.contents = new Buffer(JSON.stringify(jsdoc));
     return callback(null, chunk);
   });
 
