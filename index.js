@@ -38,8 +38,8 @@ module.exports = function ngDocParser(opts) {
         // star since the parser strips off the first "/*"
         // Don't treat block that don't start with @ngdoc
         return comment.type === 'Block' &&
-          comment.value.charAt(0) === '*' &&
-          comment.uncommentedValue.substr(0, options.START_TAG.length) === options.START_TAG;
+        comment.value.charAt(0) === '*' &&
+        comment.uncommentedValue.substr(0, options.START_TAG.length) === options.START_TAG;
       })
 
       .filter(function (comment) {
