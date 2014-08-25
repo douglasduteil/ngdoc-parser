@@ -1,6 +1,6 @@
 {
   "name": "ngdoc-parser",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A parser of ngdoc comments to json",
   "main": "index.js",
   "directories": {
