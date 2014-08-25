@@ -1,7 +1,7 @@
 {
   "name": "ngdoc-parser",
   "version": "0.0.3",
-  "description": "A ngDoc parser",
+  "description": "A parser of ngdoc comments to json",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/douglasduteil/ngDocParser.git"
+    "url": "https://github.com/douglasduteil/ngdoc-parser.git"
   },
   "author": "Douglas Duteil",
   "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/douglasduteil/ngDocParser/issues"
+    "url": "https://github.com/douglasduteil/ngdoc-parser/issues"
   },
-  "homepage": "https://github.com/douglasduteil/ngDocParser",
+  "homepage": "https://github.com/douglasduteil/ngdoc-parser",
   "dependencies": {
     "catharsis": "^0",
     "esprima": "^1",
