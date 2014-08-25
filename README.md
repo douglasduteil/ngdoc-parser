@@ -8,5 +8,7 @@ A ngDoc parser
 
 ### TEST
 
-node demo/parseSrc.js
+```
+npm run demo
+```
 

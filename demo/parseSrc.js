@@ -39,10 +39,23 @@ function ngDocMarkdown(){
 }
 
 fs.src('./demo/src/*.js')
+  .pipe(through.obj(function(file, e, callback){
+    console.log('Parsing ', file.path);
+    callback(null, file);
+  }))
   .pipe(ngDocParser())
+  .pipe(through.obj(function(file, e, callback){
+    var outFilePath = path.join(file.base, 'doc.json');
+    console.log('Extracting JSON result : ', outFilePath);
+    file.path = outFilePath;
+    callback(null, file);
+  }))
+  .pipe(fs.dest('./out'))
   .pipe(ngDocMarkdown())
   .pipe(through.obj(function(file, e, callback){
-    file.path = path.join(file.base, 'api.md');
+    var outFilePath = path.join(file.base, 'api.md');
+    console.log('Generating Markdown file : ', outFilePath);
+    file.path = outFilePath;
     callback(null, file);
   }))
   .pipe(fs.dest('./out'));
