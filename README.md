@@ -21,13 +21,41 @@ var through = require('through2');
 
 var ngdocParser = require('ngdoc-parser');
 
-fs.src('./compiled-doc/*.json')
+fs.src('./src/*.js')
   .pipe(ngdocParser())
   .pipe(through.obj(function(file, e, callback){
     file.path = path.join(file.base, 'ngdoc-rawdata.json');
     callback(null, file);
   }))
   .pipe(fs.dest('./out'));
+```
+
+## Output example
+
+```js
+[ // Array of ngdoc comments
+  {
+    "ngdoc": "directive",
+    "name": "ngRepeat",
+    "description": "The `ngRepeat` directive instantiates a template once per item from a collection. [...]",
+    "animations": "[...]",
+    "element": "ANY",
+    "scope": "",
+    "priority": "1000",
+    "params": [
+      {
+        "type": {
+          "typeExpression": "repeat_expression",
+          "type": {"type": "NameExpression", "name": "repeat_expression"},
+          "typeList": ["repeat_expression"]
+        },
+        "name": {"name": "ngRepeat"},
+        "description": "The expression indicating how to enumerate a collection. [...]"
+      }
+    ]
+  },
+  // ...
+]
 ```
 
 ## API
